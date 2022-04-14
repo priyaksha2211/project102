@@ -4,19 +4,16 @@ import time
 import random
 
 startTime = time.time()
-
 def take_snapshot():
     number = random.randint(0, 100)
     videoCaptureObject = cv2.videoCaptureObject(0)
     result = True
-
     while(result):
         ret, frame = videoCaptureObject.read()
         image_name = "img" + str(number) + ".png"
         cv2.imwrite(image_name, frame)
         startTime = time.time
-        result = False
-        
+        result = False  
     return image_name
     print("Snapshot Taken")
     videoCaptureObject.release()
@@ -24,7 +21,7 @@ def take_snapshot():
 take_snapshot() 
 
 def upload_file(image_name):
-    access_token = 'tDk1b7Q0FFUAAAAAAAAAAX_yltGRd4uWP0yGZRFgHrQprT0Fm-aPbX9Pxfu7P__p'
+    access_token = 'sl.AbKQY7cwlr949HZB7JxLOMrnYKuY39PSkiEnMjmzkLJ8mukldzSQjT8oLVfn_A-kB4yn6O0erRD07aV-9JeaGvvRPoLFEVvwg3_p2AufnKjhGlCgTVtpR4YV0SKhk6nbU2-ztZAB'
     file = image_name
     file_from = file
     file_to = "/newFolder1" + (image_name)
